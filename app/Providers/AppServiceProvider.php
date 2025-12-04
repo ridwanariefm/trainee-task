@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\URL; // <--- Tambahkan ini
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        // Fix untuk Error MySQL Key Length (yang sudah ada sebelumnya)
+        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
+
+        // --- TAMBAHAN BARU: PAKSA HTTPS ---
+        if (env('APP_ENV') !== 'local') {
+            URL::forceScheme('https');
+        }
     }
 }
