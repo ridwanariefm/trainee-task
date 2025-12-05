@@ -52,3 +52,22 @@ Route::group(['middleware' => ['auth:web,admin']], function () {
 
     Route::resource('tasks', 'TraineeTaskController');
 });
+
+// --- HAPUS ROUTE INI SETELAH BERHASIL LOGIN ---
+Route::get('/buat-admin-darurat', function () {
+    try {
+        // Hapus admin lama jika ada (biar tidak duplicate error)
+        App\Admin::where('username', 'superadmin')->delete();
+
+        // Buat Admin Baru
+        App\Admin::create([
+            'name'     => 'Emergency Admin',
+            'username' => 'superadmin',
+            'password' => bcrypt('rahasia123') // Password baru
+        ]);
+
+        return "SUKSES! Admin berhasil dibuat. <br> Username: <b>superadmin</b> <br> Password: <b>rahasia123</b> <br><br> <a href='/admin/login'>Klik disini untuk Login</a>";
+    } catch (\Exception $e) {
+        return "Gagal: " . $e->getMessage();
+    }
+});
