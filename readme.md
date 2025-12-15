@@ -6,8 +6,8 @@ A comprehensive web application designed to manage and track tasks assigned to t
 
 | Type | Link | Notes |
 | :--- | :--- | :--- |
-| **Live Demo** | https://www.youtube.com/watch?v=DLsVVnhiPoc | *Fully deployed on Railway.app* |
-| **GitHub Repo** | https://github.com/kamu-data | *Source code and documentation* |
+| **Live Demo** |- | *Fully deployed on Railway.app* |
+| **GitHub Repo** | [https://github.com/kamu-data](https://github.com/ridwanariefm/trainee-task/) | *Source code and documentation* |
 
 **Admin Access:**
 * **Username:** `superadmin`
@@ -88,4 +88,4 @@ The application will be accessible at `http://127.0.0.1:8000`.
 
 | Name | LinkedIn |
 | :--- | :--- |
-| Ridwan [Nama Kamu] | [Link Profil LinkedIn Kamu] |
+| Ridwan Arief Mutaqin | https://www.linkedin.com/in/ridwan-arief-mutaqin-b99b29316/ |
